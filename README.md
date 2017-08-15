@@ -32,6 +32,13 @@ $ VBoxManage clonehd dynamicd_disk.vhd fixed_disk.vhd --format vhd --variant dyn
   $ tce-load -wi ntfs-3g
   ```
   
+- [Tiny Core Linux Customizations for Remastering](http://www.canbike.org/off-topic/aggregate/tiny-core-linux-customizations-for-remastering.html)
+
+  ```
+  $ zcat core.gz | sudo cpio -i -H newc -d
+  $ sudo find | sudo cpio -o -H newc | gzip -2 > core.gz
+  ```
+  
 - [Udpcast](https://www.udpcast.linux.lu/)
 
   ```
