@@ -53,6 +53,7 @@ $ VBoxManage clonehd dynamicd_disk.vhd fixed_disk.vhd --format vhd --variant dyn
 - [Native VHD Boot on unsupported versions of Windows 7](http://agnipulse.com/2016/12/native-vhd-boot-unsupported-versions-windows-7/)
 - [WakeMeOnLan](http://www.nirsoft.net/utils/wake_on_lan.html)
   * [HowTo: Wake Up Computers Using Linux Command [ Wake-on-LAN ( WOL ) ]](https://www.cyberciti.biz/tips/linux-send-wake-on-lan-wol-magic-packets.html)
+- [UEFI support for PXE booting](http://projects.theforeman.org/projects/foreman/wiki/PXE_Booting_UEFI/8)
 - [PXELINUX](http://www.syslinux.org/wiki/index.php?title=PXELINUX)
 
   ```
@@ -68,6 +69,8 @@ $ VBoxManage clonehd dynamicd_disk.vhd fixed_disk.vhd --format vhd --variant dyn
   * [How to Hack a Windows 7/8/2008/10 Admin Account Password with Windows Magnifier](https://cx2h.wordpress.com/2015/04/02/how-to-hack-a-windows-782008-admin-account-password-with-windows-magnifier/)
 - [憶傑科技 - VHD 無硬碟系統](https://sites.google.com/a/vhdsoft.com/web/)
 - [[網路工具] 如何使用透過網路(LAN)喚醒功能(Wake on LAN)](https://www.asus.com/tw/support/FAQ/1009775)
+- [ATA over Ethernet](https://en.wikipedia.org/wiki/ATA_over_Ethernet)
+  * [WinAoE - AoE Windows Driver](https://winaoe.org/)
 
 ## About
 HSIEH, Li-Yi @進學國小資訊組
