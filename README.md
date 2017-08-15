@@ -43,7 +43,7 @@ $ VBoxManage clonehd dynamicd_disk.vhd fixed_disk.vhd --format vhd --variant dyn
 
   ```
   $ udp-sender --full-duplex -f source.vhd
-  $ udp-receiver -f saved.disk
+  $ udp-receiver -f saved.vhd
   ```
 
 - [Parallel SSH](https://pypi.python.org/pypi/pssh)
