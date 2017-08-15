@@ -60,3 +60,5 @@ $ VBoxManage clonehd dynamicd_disk.vhd fixed_disk.vhd --format vhd --variant dyn
   INITRD /corelinux/core.gz,/corelinux/tce.gz,/corelinux/cde.gz
   APPEND loglevel=3,next-server=163.26.68.15
   ```
+
+- [憶傑科技 - VHD 無硬碟系統](https://sites.google.com/a/vhdsoft.com/web/)
