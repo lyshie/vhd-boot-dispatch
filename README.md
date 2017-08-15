@@ -33,8 +33,23 @@ $ VBoxManage clonehd dynamicd_disk.vhd fixed_disk.vhd --format vhd --variant dyn
   ```
   
 - [Udpcast](https://www.udpcast.linux.lu/)
+
+  ```
+  $ udp-sender --full-duplex -f source.vhd
+  $ udp-receiver -f saved.disk
+  ```
+
 - [Parallel SSH](https://pypi.python.org/pypi/pssh)
 - [MSYS2](http://www.msys2.org/)
+- [ConEmu](https://conemu.github.io/)
 - [Native VHD Boot on unsupported versions of Windows 7](http://agnipulse.com/2016/12/native-vhd-boot-unsupported-versions-windows-7/)
 - [WakeMeOnLan](http://www.nirsoft.net/utils/wake_on_lan.html)
 - [PXELINUX](http://www.syslinux.org/wiki/index.php?title=PXELINUX)
+
+  ```
+  LABEL tiny-core-linux
+  TITLE Tiny Core Linux
+  LINUX /corelinux/vmlinuz
+  INITRD /corelinux/core.gz,/corelinux/tce.gz,/corelinux/cde.gz
+  APPEND loglevel=3,next-server=163.26.68.15
+  ```
