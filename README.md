@@ -51,6 +51,7 @@ $ VBoxManage clonehd dynamicd_disk.vhd fixed_disk.vhd --format vhd --variant dyn
 - [ConEmu](https://conemu.github.io/)
 - [Native VHD Boot on unsupported versions of Windows 7](http://agnipulse.com/2016/12/native-vhd-boot-unsupported-versions-windows-7/)
 - [WakeMeOnLan](http://www.nirsoft.net/utils/wake_on_lan.html)
+  * [HowTo: Wake Up Computers Using Linux Command [ Wake-on-LAN ( WOL ) ]](https://www.cyberciti.biz/tips/linux-send-wake-on-lan-wol-magic-packets.html)
 - [PXELINUX](http://www.syslinux.org/wiki/index.php?title=PXELINUX)
 
   ```
