@@ -49,6 +49,7 @@ $ VBoxManage clonehd dynamicd_disk.vhd fixed_disk.vhd --format vhd --variant dyn
 - [Parallel SSH](https://pypi.python.org/pypi/pssh)
 - [MSYS2](http://www.msys2.org/)
 - [ConEmu](https://conemu.github.io/)
+- [Booting Windows to a Differencing Virtual Hard Disk](https://blogs.msdn.microsoft.com/heaths/2009/10/13/booting-windows-to-a-differencing-virtual-hard-disk/)
 - [Native VHD Boot on unsupported versions of Windows 7](http://agnipulse.com/2016/12/native-vhd-boot-unsupported-versions-windows-7/)
 - [WakeMeOnLan](http://www.nirsoft.net/utils/wake_on_lan.html)
   * [HowTo: Wake Up Computers Using Linux Command [ Wake-on-LAN ( WOL ) ]](https://www.cyberciti.biz/tips/linux-send-wake-on-lan-wol-magic-packets.html)
