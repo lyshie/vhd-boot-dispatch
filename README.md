@@ -62,3 +62,4 @@ $ VBoxManage clonehd dynamicd_disk.vhd fixed_disk.vhd --format vhd --variant dyn
   ```
 
 - [憶傑科技 - VHD 無硬碟系統](https://sites.google.com/a/vhdsoft.com/web/)
+- [[網路工具] 如何使用透過網路(LAN)喚醒功能(Wake on LAN)](https://www.asus.com/tw/support/FAQ/1009775)
