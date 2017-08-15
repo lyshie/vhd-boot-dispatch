@@ -61,5 +61,8 @@ $ VBoxManage clonehd dynamicd_disk.vhd fixed_disk.vhd --format vhd --variant dyn
   APPEND loglevel=3,next-server=163.26.68.15
   ```
 
+- [chntpw](https://en.wikipedia.org/wiki/Chntpw)
+  * [Reset Windows 7 Admin Password with Ubuntu Live CD/USB](http://www.chntpw.com/reset-windows-7-admin-password-with-ubuntu/)
+  * [How to Hack a Windows 7/8/2008/10 Admin Account Password with Windows Magnifier](https://cx2h.wordpress.com/2015/04/02/how-to-hack-a-windows-782008-admin-account-password-with-windows-magnifier/)
 - [憶傑科技 - VHD 無硬碟系統](https://sites.google.com/a/vhdsoft.com/web/)
 - [[網路工具] 如何使用透過網路(LAN)喚醒功能(Wake on LAN)](https://www.asus.com/tw/support/FAQ/1009775)
