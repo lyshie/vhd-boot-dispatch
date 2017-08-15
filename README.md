@@ -22,6 +22,7 @@ $ VBoxManage clonehd dynamicd_disk.vhd fixed_disk.vhd --format vhd --variant dyn
 ```
 
 ## External Reference
+- [Grub4dos Guide](http://diddy.boot-land.net/grub4dos/Grub4dos.htm)
 - [Tiny Core Linux](http://distro.ibiblio.org/tinycorelinux/)
   * ntfs-3g
   * ntfsprogs
