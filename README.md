@@ -74,6 +74,12 @@ $ VBoxManage clonehd dynamicd_disk.vhd fixed_disk.vhd --format vhd --variant dyn
   * [WinAoE - AoE Windows Driver](https://winaoe.org/)
 - [Visual BCD Editor](https://www.boyans.net/)
 - [ProductPolicy viewer](http://reboot.pro/topic/20585-productpolicy-viewer/?p=196418)
+- [PsTools](https://docs.microsoft.com/en-us/sysinternals/downloads/pstools) / 遠端執行桌面程式
+
+  ```
+  $ ./PsExec -accepteula
+  $ ./PsExec -i 1 -s notepad.exe
+  ```
 
 ## About
 HSIEH, Li-Yi @進學國小資訊組
