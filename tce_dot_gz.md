@@ -1,4 +1,6 @@
 ## tce.gz
+
+```
 /etc
 /etc/shadow
 /etc/passwd
@@ -31,3 +33,4 @@
 /opt/tce/optional/ntfs-3g.tcz.md5.txt
 /opt/tce/optional/openssh.tcz.dep
 /opt/tce/onboot.lst
+```
