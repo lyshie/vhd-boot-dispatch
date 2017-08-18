@@ -63,6 +63,15 @@ $ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O
   $ udp-sender --full-duplex -f source.vhd
   $ udp-receiver -f saved.vhd
   ```
+  
+  ```
+  $ mkdir /mnt/sda2/t                       # Temp
+  $ uftpd -D /mnt/sda2/ -T /mnt/sda2/t/     # Dest, Temp (Client)
+  $ uftp -R -1 /srv/pcroom/pieces/          # Source directory (Server)
+  
+  $ split -b 1G /src/pcroom/disk.vhd /src/pcroom/pieces  # Split, unknown file size limit (2147483647)
+  $ cat * > disk.vhd                                     # Join
+  ```
 
 - [Parallel SSH](https://pypi.python.org/pypi/pssh)
 - [MSYS2](http://www.msys2.org/)
