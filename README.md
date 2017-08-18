@@ -72,6 +72,20 @@ $ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O
   $ split -b 1G /src/pcroom/disk.vhd /src/pcroom/pieces  # Split, unknown file size limit (2147483647)
   $ cat * > disk.vhd                                     # Join
   ```
+  * [How can I get gcc to write a file larger than 2.0 GB?](https://askubuntu.com/questions/21474/how-can-i-get-gcc-to-write-a-file-larger-than-2-0-gb)
+  
+  ```
+  $ cd uftp-4.9.3/
+  $ vim makefile                            # Add -D_GNU_SOURCE (-D_FILE_OFFSET_BITS=64)
+  ifeq ("Linux", "$(UNAME_S)")
+  ...
+  ...
+  bad-function-cast -DHAS_GETIFADDRS -D_GNU_SOURCE $(ENC_OPTS) 
+  
+  $ make NO_ENCRYPTION=1
+  ```
+  
+  ```
 
 - [Parallel SSH](https://pypi.python.org/pypi/pssh)
 - [MSYS2](http://www.msys2.org/)
