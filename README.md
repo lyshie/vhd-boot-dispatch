@@ -75,6 +75,7 @@ $ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O
   * [How can I get gcc to write a file larger than 2.0 GB?](https://askubuntu.com/questions/21474/how-can-i-get-gcc-to-write-a-file-larger-than-2-0-gb)
   
   ```
+  $ tce-load -wi compiletc
   $ cd uftp-4.9.3/
   $ vim makefile                            # Add -D_GNU_SOURCE (-D_FILE_OFFSET_BITS=64)
   ifeq ("Linux", "$(UNAME_S)")
