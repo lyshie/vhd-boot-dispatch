@@ -93,6 +93,11 @@ $ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O
 - [Native VHD Boot on unsupported versions of Windows 7](http://agnipulse.com/2016/12/native-vhd-boot-unsupported-versions-windows-7/)
 - [WakeMeOnLan](http://www.nirsoft.net/utils/wake_on_lan.html)
   * [HowTo: Wake Up Computers Using Linux Command [ Wake-on-LAN ( WOL ) ]](https://www.cyberciti.biz/tips/linux-send-wake-on-lan-wol-magic-packets.html)
+  
+  ```
+  $ ethtool -s net0 wol g
+  ```
+  
 - [UEFI support for PXE booting](http://projects.theforeman.org/projects/foreman/wiki/PXE_Booting_UEFI/8)
 - [PXELINUX](http://www.syslinux.org/wiki/index.php?title=PXELINUX)
 
