@@ -8,6 +8,10 @@
 /opt/bin
 /opt/bin/udp-receiver
 /opt/bin/udp-sender
+/opt/bin/uftp
+/opt/bin/uftpd
+/opt/bin/uftp_keymgt
+/opt/bin/uftpproxyd
 /opt/bootlocal.sh
 /opt/tce
 /opt/tce/onboot.lst
