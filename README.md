@@ -57,7 +57,7 @@ $ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O
   $ sudo find | sudo cpio -o -H newc | gzip -2 > core.gz
   ```
   
-- [Udpcast](https://www.udpcast.linux.lu/) / uftp / mrsync
+- [Udpcast](https://www.udpcast.linux.lu/) / [uftp](http://uftp-multicast.sourceforge.net/) / mrsync
 
   ```
   $ udp-sender --full-duplex -f source.vhd
