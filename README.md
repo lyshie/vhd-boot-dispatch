@@ -1,6 +1,22 @@
 # msys2-windows-utils
 Windows utilities under MSYS2
 
+## 說明
+使用 GNU/Linux 環境同時派送 Windows VHD 至多台個人電腦，以 Native VHD Boot 方式開機。
+- Server 端
+- 以 WOL (Wake-on-LAN) 方式啟動多台個人電腦
+- dhcpd 派送網路設定與 next-server 資訊
+- in.tfptd 派送 pxelinux.0、pxelinux.cfg/default 與 Tiny Core Linux 作業系統
+- 修改 Tiny Core Linux 套件，增加 ntfs-3g、ntfsprogs、openssh、rsync、udpcast 與 uftp 等程式
+- 修改 Tiny Core Linux 帳號密碼，如 /etc/passwd、/etc/shadow，並啟動 sshd server
+- 於 server 端使用 PSSH 控制遠端的個人電腦
+  * 掛載 NTFS 分割區
+  * 啟動 uftpd 以 UDP Multicast 方式接收 VHD 檔案、grub4dos、BOOTMGR
+  * 安裝 grub4dos 至 MBR 或使用既有的開機程式
+  * 重新開機
+- 於 Windows 中安裝 MSYS2，以 cygrunsrv 方式啟動 sshd server
+- Windows 開機後自動依 IP 設定電腦名稱
+   
 ## Boot
 - bootmgr
 - BOOTNXT
