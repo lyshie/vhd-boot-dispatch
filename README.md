@@ -84,8 +84,6 @@ $ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O
   
   $ make NO_ENCRYPTION=1
   ```
-  
-  ```
 
 - [Parallel SSH](https://pypi.python.org/pypi/pssh)
 - [MSYS2](http://www.msys2.org/)
