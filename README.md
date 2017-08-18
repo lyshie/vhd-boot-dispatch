@@ -3,7 +3,7 @@ Windows utilities under MSYS2
 
 ## 說明
 使用 GNU/Linux 環境同時派送 Windows VHD 至多台個人電腦，以 Native VHD Boot 方式開機。
-- Server 端 以 WOL (Wake-on-LAN) 方式啟動多台個人電腦
+- Server 端以 WOL (Wake-on-LAN) 方式啟動多台個人電腦
 - dhcpd 派送網路設定與 next-server 資訊
 - in.tfptd 派送 pxelinux.0、pxelinux.cfg/default 與 Tiny Core Linux 作業系統
 - 修改 Tiny Core Linux 套件，增加 ntfs-3g、ntfsprogs、openssh、rsync、udpcast 與 uftp 等程式
