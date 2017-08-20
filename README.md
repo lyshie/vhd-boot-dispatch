@@ -81,7 +81,7 @@ $ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O
 
   ```
   $ transmission-create -o disk.torrent -c "Win7 VHD Boot" disk.vhd
-  $ tftp -r pcroom/disk.torrent -l /mnt/sda2/p2p/disk.torrent -g [伺服器位址]
+  $ tftp -r pcroom/disk.torrent -l /mnt/sda2/p2p/disk.torrent -g [伺服器位址]
   $ transmission-cli -v -w /mnt/sda2/p2p/ /mnt/sda2/p2p/disk.torrent
   ```
 
