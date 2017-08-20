@@ -10,7 +10,7 @@ Windows utilities under MSYS2
 - 修改 Tiny Core Linux 帳號密碼，如 /etc/passwd、/etc/shadow，並啟動 sshd server
 - 於 server 端使用 PSSH 控制遠端的個人電腦
   * 掛載 NTFS 分割區
-  * 啟動 uftpd 以 UDP Multicast 方式接收 VHD 檔案、grub4dos、BOOTMGR
+  * 啟動 uftpd 以 UDP Multicast 或 BitTorrent 方式接收 VHD 檔案、grub4dos、BOOTMGR
   * 安裝 grub4dos 至 MBR 或使用既有的開機程式
   * 重新開機
 - 於 Windows 中安裝 MSYS2，以 cygrunsrv 方式啟動 sshd server
@@ -71,7 +71,20 @@ $ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O
   $ zcat core.gz | sudo cpio -i -H newc -d
   $ sudo find | sudo cpio -o -H newc | gzip -2 > core.gz
   ```
-  
+- [Transmission](https://transmissionbt.com/)
+
+  ```
+  $ vi settings.json
+  "dht-enabled": true
+  "lpd-enabled": true
+  ```
+
+  ```
+  $ transmission-create -o disk.torrent -c "Win7 VHD Boot" disk.vhd
+  $ tftp -r pcroom/disk.torrent -l /mnt/sda2/p2p/disk.torrent -g [伺服器位址]
+  $ transmission-cli -v -w /mnt/sda2/p2p/ /mnt/sda2/p2p/disk.torrent
+  ```
+
 - [Udpcast](https://www.udpcast.linux.lu/) / [uftp](http://uftp-multicast.sourceforge.net/) / [mrsync](https://sourceforge.net/projects/mrsync/)
 
   ```
