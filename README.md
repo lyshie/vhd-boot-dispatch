@@ -53,6 +53,12 @@ $ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O
 $ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O "StrictHostKeyChecking no" -- "shutdown -r -t 30"
 ```
 
+## grub4dos
+```
+$ /usr/local/share/grub4dos/bootlace.com /dev/sda
+$ cp /usr/local/share/grub4dos/{chinese/}grldr /mnt/sda2
+```
+
 ## External Reference
 - [Grub4dos Guide](http://diddy.boot-land.net/grub4dos/Grub4dos.htm)
 - [Tiny Core Linux](http://distro.ibiblio.org/tinycorelinux/)
