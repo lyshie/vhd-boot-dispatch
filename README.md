@@ -130,6 +130,7 @@ $ cp /usr/local/share/grub4dos/{chinese/}grldr /mnt/sda2
   
   ```
   $ ethtool -s net0 wol g
+  $ etherwake -i [介面] -b [MAC Address / 11:22:33:44:55:66]
   ```
   
 - [UEFI support for PXE booting](http://projects.theforeman.org/projects/foreman/wiki/PXE_Booting_UEFI/8)
