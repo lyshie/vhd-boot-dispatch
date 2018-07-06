@@ -1,0 +1,19 @@
+#!/bin/sh
+exec tail -n +3 $0
+menuentry 'GRUB4DOS (Intel SSD)' --class windows {
+	savedefault
+	insmod part_msdos
+	insmod ntfs
+	insmod ntldr
+	search --set=root --no-floppy --file /sig_intel_ssd
+	ntldr /grldr
+}
+
+menuentry 'GRUB4DOS (NTFS)' --class windows {
+	savedefault
+	insmod part_msdos
+	insmod ntfs
+	insmod ntldr
+	search --set=root --no-floppy --file /sig_ntfs
+	ntldr /grldr
+}
