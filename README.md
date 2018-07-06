@@ -33,7 +33,7 @@ Windows utilities under MSYS2
 |---|---|---|---|---|
 |disk_p.vhd|母碟|基礎磁碟|靜態|約 30 GB|
 |disk.vhd|子碟|差異化磁碟|動態|隨差異增加|
-|disk_chd.vhd|還原檔|差異化磁碟|靜態|約 173 KB|
+|disk_r.vhd|還原檔|差異化磁碟|靜態|約 173 KB|
 
 ## 開機選項
 ```
