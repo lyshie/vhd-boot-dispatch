@@ -38,6 +38,17 @@ Windows utilities under MSYS2
   ```
   $ vboxmanage clonemedium INPUT.VHD OUTPUT.VHD --format VHD --variant Standard
   ```
+- [建立差異化磁碟 (Differencing Disks)](https://blogs.msdn.microsoft.com/7/2009/10/07/diskpart-exe-and-managing-virtual-hard-disks-vhds-in-windows-7/)
+```
+diskpart
+> create vdisk file="f:\disk.vhd" parent="f:\disk_p.vhd"
+```
+- [合併差異化磁碟](https://blogs.msdn.microsoft.com/7/2009/10/07/diskpart-exe-and-managing-virtual-hard-disks-vhds-in-windows-7/)
+```
+diskpart
+> select vdisk file="f:\disk.vhd"
+> merge depth=1
+```
 
 ## 開機流程
 - grub2 (無 grub2 可略過)
