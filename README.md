@@ -16,6 +16,29 @@ Windows utilities under MSYS2
 - 於 Windows 中安裝 MSYS2，以 cygrunsrv 方式啟動 sshd server
 - Windows 開機後自動依 IP 設定電腦名稱
 
+## 如何準備 VHD 檔案
+- 透過 VirtualBox 安裝新系統
+- [取消 `VirtualDiskExpandOnMount`](https://superuser.com/questions/1149941/how-to-by-pass-vhd-boot-host-volume-not-enough-space-when-native-booting)
+  ```
+  HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\FsDepends\Parameters
+  VirtualDiskExpandOnMount = 4
+  ```
+- [SDelete 清理磁碟](https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete)
+```
+> sdelete64 -c -z C:
+```
+- 緊湊 VHD 磁碟空間
+  * [Windows](https://social.technet.microsoft.com/wiki/contents/articles/8043.how-to-compact-a-dynamic-vhd-with-diskpart.aspx)
+  ```
+  diskpart
+  > select vdisk file="f:\disk_p.vhd"
+  > compact vdisk
+  ```
+  * [Linux](https://serverfault.com/questions/888986/compact-a-vhd-on-a-linux-host)
+  ```
+  $ vboxmanage clonemedium INPUT.VHD OUTPUT.VHD --format VHD --variant Standard
+  ```
+
 ## 開機流程
 - grub2 (無 grub2 可略過)
 ```
