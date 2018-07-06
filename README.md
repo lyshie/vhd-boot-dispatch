@@ -16,6 +16,18 @@ Windows utilities under MSYS2
 - 於 Windows 中安裝 MSYS2，以 cygrunsrv 方式啟動 sshd server
 - Windows 開機後自動依 IP 設定電腦名稱
 
+## [Transfer time](https://techinternets.com/copy_calc)
+- 40 GiB
+
+|設備|速度|估計傳輸時間|
+|---|---|---|
+|Fast Ethernet|100 mbps|1:00:04|
+|Gigabit Ethernet|1000 mbps|0:06:00|
+|USB 2.0|480 mbps|0:12:30|
+|USB 3.0|3.2 gbps|0:01:50|
+|SATA-I|1.5 gbps|0:03:54|
+|SATA-II|3 gbps|0:01:57|
+
 ## Disk layouts
 |檔案名稱|用途|類型|狀態|大小|
 |---|---|---|---|---|
