@@ -1,5 +1,5 @@
 # msys2-windows-utils
-Windows utilities under MSYS2
+Windows Native VHD Boot and Dispatch
 
 ## 說明
 使用 GNU/Linux 環境同時派送 Windows VHD 至多台個人電腦，以 Native VHD Boot 方式開機。
