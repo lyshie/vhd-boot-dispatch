@@ -35,6 +35,17 @@ Windows utilities under MSYS2
 |disk.vhd|子碟|差異化磁碟|動態|隨差異增加|
 |disk_chd.vhd|還原檔|差異化磁碟|靜態|約 173 KB|
 
+## 開機選項
+```
+base.vhd => pcroom_base.vhd => pcroom.vhd (pcroom_r.vhd)
+         => office_base.vhd => office.vhd (office_r.vhd)
+```
+|名稱|標題|BCD|VHD|
+|---|---|---|---|
+|pcroom_r|電腦教室還原|BCD.pcroom|pcroom_r.vhd > pcroom.vhd|
+|pcroom|電腦教室|BCD.pcroom|pcroom.vhd|
+|office_r|辦公室還原|BCD.office|office_r.vhd > office.vhd|
+|office|辦公室|BCD.office|office.vhd|
 
 ## 如何準備 VHD 檔案
 - 透過 VirtualBox 安裝新系統
