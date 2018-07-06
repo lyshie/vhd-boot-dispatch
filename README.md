@@ -15,12 +15,43 @@ Windows utilities under MSYS2
   * 重新開機
 - 於 Windows 中安裝 MSYS2，以 cygrunsrv 方式啟動 sshd server
 - Windows 開機後自動依 IP 設定電腦名稱
-   
+
+## 開機流程
+- grub2 (無 grub2 可略過)
+```
+menuentry 'GRUB4DOS (NTFS)' --class windows {
+    savedefault
+    insmod part_msdos
+    insmod ntfs
+    insmod ntldr
+    search --set=root --no-floppy --file /sig_ntfs    # 特徵檔案，識別磁碟區位置
+    ntldr /grldr                                      # 控制權交給 grub4dos
+}
+```
+- grub4dos
+```
+timeout 5
+default 0
+
+title Windows 10 (Native VHD Boot)
+
+find --set-root --ignore-floppies --ignore-cd /sig_ntfs
+dd if=()/Boot/BCD.disk.vhd of=()/Boot/BCD                  # 設定 disk.vhd 為開機裝置 (可切換不同用途的 VHD 檔案)
+
+find --set-root --ignore-floppies --ignore-cd /sig_ntfs    # 還原 disk_chd.vhd 至 disk.vhd
+dd if=()/disk_chd.vhd of=()/disk.vhd
+
+find --set-root --ignore-floppies --ignore-cd /sig_ntfs
+chainloader /bootmgr                                       # 控制權交給 bootmgr (Boot\BCD)
+```
+
 ## Boot
 - bootmgr
 - BOOTNXT
-- Boot\
+- Boot
+- Boot\BCD (紀錄作業系統開機的裝置)
 - grub4dos\
+- sig_* (特徵檔案，識別磁碟區位置)
 
 ## VHD
 ```
