@@ -16,6 +16,14 @@ Windows utilities under MSYS2
 - 於 Windows 中安裝 MSYS2，以 cygrunsrv 方式啟動 sshd server
 - Windows 開機後自動依 IP 設定電腦名稱
 
+## Disk layouts
+|檔案名稱|用途|類型|狀態|大小|
+|---|---|---|---|---|
+|disk_p.vhd|母碟|基礎磁碟|靜態|約 30 GB|
+|disk.vhd|子碟|差異化磁碟|動態|隨差異增加|
+|disk_chd.vhd|還原檔|差異化磁碟|靜態|約 173 KB|
+
+
 ## 如何準備 VHD 檔案
 - 透過 VirtualBox 安裝新系統
 - [取消 `VirtualDiskExpandOnMount`](https://superuser.com/questions/1149941/how-to-by-pass-vhd-boot-host-volume-not-enough-space-when-native-booting)
