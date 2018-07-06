@@ -225,6 +225,11 @@ $ cp /usr/local/share/grub4dos/{chinese/}grldr /mnt/sda2
 - [ATA over Ethernet](https://en.wikipedia.org/wiki/ATA_over_Ethernet)
   * [WinAoE - AoE Windows Driver](https://winaoe.org/)
 - [Visual BCD Editor](https://www.boyans.net/)
+  * [編輯 BCD 紀錄，使用 VHD 開機](https://www.boyans.net/VBCD_HowTo.html)
+  ```
+  ApplicationDevice => LocateExDevice = \disk.vhd
+  OSDevice => LocateExDevice = \disk.vhd
+  ```
 - [ProductPolicy viewer](http://reboot.pro/topic/20585-productpolicy-viewer/?p=196418)
 - [PsTools](https://docs.microsoft.com/en-us/sysinternals/downloads/pstools) / 遠端執行桌面程式
 
