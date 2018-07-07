@@ -154,6 +154,15 @@ $ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O
 $ /usr/local/share/grub4dos/bootlace.com /dev/sda
 $ cp /usr/local/share/grub4dos/{chinese/}grldr /mnt/sda2
 ```
+中文字型顯示須符合 unifont.hex 格式，自行下載 [`GNU Unifont`](http://unifoundry.com/)，可內嵌或外部載入。[直接下載字型](http://unifoundry.com/pub/unifont-11.0.01/font-builds/unifont-11.0.01.hex.gz)。
+```
+color blue/green yellow/red white/magenta white/magenta
+## menu border color
+color border=0xEEFFEE
+## set vbe mode
+graphicsmode -1 640:800 480:600 24:32 || graphicsmode -1 -1 -1 24:32
+font /unifont.hex.gz
+```
 
 ## External Reference
 - [Grub4dos Guide](http://diddy.boot-land.net/grub4dos/Grub4dos.htm)
