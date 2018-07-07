@@ -253,6 +253,8 @@ $ cp /usr/local/share/grub4dos/{chinese/}grldr /mnt/sda2
   ApplicationDevice => LocateExDevice = \disk.vhd
   OSDevice => LocateExDevice = \disk.vhd
   ```
+  * [Mounting the BCD Store as a Registry Hive](http://www.mistyprojects.co.uk/documents/BCDEdit/files/bcd_as_registry_hive.htm)
+  * [Devices - Locate](http://www.mistyprojects.co.uk/documents/BCDEdit/files/device_locate.htm)
 - [ProductPolicy viewer](http://reboot.pro/topic/20585-productpolicy-viewer/?p=196418)
 - [PsTools](https://docs.microsoft.com/en-us/sysinternals/downloads/pstools) / 遠端執行桌面程式
 
