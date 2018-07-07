@@ -81,6 +81,11 @@ diskpart
 > merge depth=1
 ```
 
+## [UTC in Windows](https://wiki.archlinux.org/index.php/time#UTC_in_Windows)
+```
+> reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_DWORD /f
+```
+
 ## 開機流程
 - grub2 (無 grub2 可略過)
 ```
