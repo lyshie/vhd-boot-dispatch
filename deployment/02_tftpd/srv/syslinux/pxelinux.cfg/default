@@ -1,0 +1,17 @@
+default vesamenu.c32
+prompt 0
+timeout 50
+ONTIMEOUT tinycore
+
+MENU TITLE Chin-Hsueh Primary School - PXE Menu
+
+LABEL local1
+    MENU LABEL * Boot from first hard disk *
+    KERNEL chain.c32
+    APPEND hd0
+
+LABEL tinycore
+    MENU Tiny Core Linux
+    KERNEL corelinux/vmlinuz
+    INITRD corelinux/core.gz,corelinux/tce.gz,corelinux/cde.gz
+    APPEND loglevel=3 next-server=163.26.68.15

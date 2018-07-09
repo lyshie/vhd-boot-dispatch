@@ -1,0 +1,2 @@
+#TFTPD_ARGS="--secure /srv/arch/boot"
+TFTPD_ARGS="--secure /srv"
