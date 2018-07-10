@@ -47,6 +47,14 @@ base.vhd => pcroom_base.vhd => pcroom.vhd (pcroom_r.vhd)
 |office_r|辦公室還原|BCD.office|office_r.vhd > office.vhd|
 |office|辦公室|BCD.office|office.vhd|
 
+## VHD 建立順序
+```
+base.vhd(0) => test.vhd(1)   == pcroom_base.vhd(1) => pcroom.vhd(2)
+               test_r.vhd(1)                          pcroom_r.vhd(2)
+                             == office_base.vhd(1) => office.vhd(2)
+                                                      office_r.vhd(2)
+```
+
 ## 如何準備 VHD 檔案
 - 透過 VirtualBox 安裝新系統
 - [取消 `VirtualDiskExpandOnMount`](https://superuser.com/questions/1149941/how-to-by-pass-vhd-boot-host-volume-not-enough-space-when-native-booting)
