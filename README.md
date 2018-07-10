@@ -124,12 +124,21 @@ chainloader /bootmgr                                       # 控制權交給 boo
 ```
 
 ## Boot
-- bootmgr
-- BOOTNXT
-- Boot
-- Boot\BCD (紀錄作業系統開機的裝置)
-- grub4dos\
-- sig_* (特徵檔案，識別磁碟區位置)
+- 1st stage files
+  - grldr (開機程式)
+  - menu.lst (開機選單)
+  - unifont.hex.gz (中文字形)
+  - sig_* (選用，特徵檔案，識別磁碟區位置)
+- 2nd stage files
+  - bootmgr
+  - BOOTNXT
+  - Boot
+  - Boot\BCD (紀錄作業系統開機的裝置)
+  - Boot\BCD.*
+- disk files
+  - base.vhd (基礎檔)
+  - pcroom.vhd (差異檔)
+  - pcroom_r.vhd (差異檔，還原用)
 
 ## VHD
 ```
