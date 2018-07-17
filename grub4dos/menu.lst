@@ -1,6 +1,0 @@
-timeout 5
-default 0
-
-title Windows 7 (Native VHD Boot)
-find --set-root --ignore-floppies --ignore-cd /disk.vhd
-chainloader /bootmgr
