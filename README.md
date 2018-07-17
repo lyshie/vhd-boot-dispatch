@@ -272,7 +272,7 @@ font /unifont.hex.gz
   INITRD /corelinux/core.gz,/corelinux/tce.gz,/corelinux/cde.gz
   APPEND loglevel=3,next-server=163.26.68.15
   ```
-
+- [Disk2vhd：未安裝 Hyper-V 套件時，直接以 p2v 的方式轉成 VHDX](https://docs.microsoft.com/en-us/sysinternals/downloads/disk2vhd)
 - [chntpw](https://en.wikipedia.org/wiki/Chntpw)
   * [Reset Windows 7 Admin Password with Ubuntu Live CD/USB](http://www.chntpw.com/reset-windows-7-admin-password-with-ubuntu/)
   * [How to Hack a Windows 7/8/2008/10 Admin Account Password with Windows Magnifier](https://cx2h.wordpress.com/2015/04/02/how-to-hack-a-windows-782008-admin-account-password-with-windows-magnifier/)
