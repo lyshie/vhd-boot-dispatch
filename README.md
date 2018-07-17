@@ -37,22 +37,22 @@ Windows Native VHD Boot and Dispatch
 
 ## 開機選項
 ```
-base.vhd => pcroom_base.vhd => pcroom.vhd (pcroom_r.vhd)
-         => office_base.vhd => office.vhd (office_r.vhd)
+base.vhdx => pcroom_base.vhdx => pcroom.vhdx (pcroom_r.vhdx)
+          => office_base.vhdx => office.vhdx (office_r.vhdx)
 ```
 |名稱|標題|BCD|VHD|
 |---|---|---|---|
-|pcroom_r|電腦教室還原|BCD.pcroom|pcroom_r.vhd > pcroom.vhd|
-|pcroom|電腦教室|BCD.pcroom|pcroom.vhd|
-|office_r|辦公室還原|BCD.office|office_r.vhd > office.vhd|
-|office|辦公室|BCD.office|office.vhd|
+|pcroom_r|電腦教室還原|BCD.pcroom_vhdx|pcroom_r.vhdx > pcroom.vhdx|
+|pcroom|電腦教室|BCD.pcroom_vhdx|pcroom.vhdx|
+|office_r|辦公室還原|BCD.office_vhdx|office_r.vhdx > office.vhdx|
+|office|辦公室|BCD.office_vhdx|office.vhdx|
 
 ## VHD 建立順序
 ```
-base.vhd(0) => test.vhd(1)   == pcroom_base.vhd(1) => pcroom.vhd(2)
-               test_r.vhd(1)                          pcroom_r.vhd(2)
-                             == office_base.vhd(1) => office.vhd(2)
-                                                      office_r.vhd(2)
+base.vhdx(0) => test.vhdx(1)   == pcroom_base.vhdx(1) => pcroom.vhdx(2)
+                test_r.vhdx(1)                           pcroom_r.vhdx(2)
+                               == office_base.vhdx(1) => office.vhdx(2)
+                                                         office_r.vhdx(2)
 ```
 
 ## 如何準備 VHD 檔案
@@ -70,7 +70,7 @@ base.vhd(0) => test.vhd(1)   == pcroom_base.vhd(1) => pcroom.vhd(2)
   * [Windows](https://social.technet.microsoft.com/wiki/contents/articles/8043.how-to-compact-a-dynamic-vhd-with-diskpart.aspx)
   ```
   diskpart
-  > select vdisk file="f:\disk_p.vhd"
+  > select vdisk file="f:\base.vhdx"
   > compact vdisk
   ```
   * [Linux](https://serverfault.com/questions/888986/compact-a-vhd-on-a-linux-host)
@@ -80,13 +80,15 @@ base.vhd(0) => test.vhd(1)   == pcroom_base.vhd(1) => pcroom.vhd(2)
 - [建立差異化磁碟 (Differencing Disks)](https://blogs.msdn.microsoft.com/7/2009/10/07/diskpart-exe-and-managing-virtual-hard-disks-vhds-in-windows-7/)
 ```
 diskpart
-> create vdisk file="f:\disk.vhd" parent="f:\disk_p.vhd"
+> create vdisk file="f:\pcroom_base.vhdx" parent="f:\base.vhdx"
 ```
 - [合併差異化磁碟](https://blogs.msdn.microsoft.com/7/2009/10/07/diskpart-exe-and-managing-virtual-hard-disks-vhds-in-windows-7/)
 ```
 diskpart
-> select vdisk file="f:\disk.vhd"
+> select vdisk file="f:\pcroom_base.vhdx"
 > merge depth=1
+> compact vdisk
+> create vdisk file="f:\pcroom.vhdx" parent="f:\pcroom_base.vhdx"
 ```
 
 ## [UTC in Windows](https://wiki.archlinux.org/index.php/time#UTC_in_Windows)
@@ -114,10 +116,10 @@ default 0
 title Windows 10 (Native VHD Boot)
 
 find --set-root --ignore-floppies --ignore-cd /sig_ntfs
-dd if=()/Boot/BCD.disk.vhd of=()/Boot/BCD                  # 設定 disk.vhd 為開機裝置 (可切換不同用途的 VHD 檔案)
+dd if=()/Boot/BCD.pcroom_vhdx of=()/Boot/BCD               # 設定 pcroom.vhdx 為開機裝置 (可切換不同用途的 VHD 檔案)
 
-find --set-root --ignore-floppies --ignore-cd /sig_ntfs    # 還原 disk_chd.vhd 至 disk.vhd
-dd if=()/disk_chd.vhd of=()/disk.vhd
+find --set-root --ignore-floppies --ignore-cd /sig_ntfs    # 還原 pcroom_r.vhdx 至 pcroom.vhdx
+dd if=()/pcroom_r.vhdx of=()/pcroom.vhdx
 
 find --set-root --ignore-floppies --ignore-cd /sig_ntfs
 chainloader /bootmgr                                       # 控制權交給 bootmgr (Boot\BCD)
@@ -136,9 +138,9 @@ chainloader /bootmgr                                       # 控制權交給 boo
   - Boot\BCD (紀錄作業系統開機的裝置)
   - Boot\BCD.*
 - disk files
-  - base.vhd (基礎檔)
-  - pcroom.vhd (差異檔)
-  - pcroom_r.vhd (差異檔，還原用)
+  - base.vhdx (基礎檔)
+  - pcroom.vhdx (差異檔)
+  - pcroom_r.vhdx (差異檔，還原用)
 
 ## VHD
 ```
@@ -221,8 +223,8 @@ font /unifont.hex.gz
 - [Udpcast](https://www.udpcast.linux.lu/) / [uftp](http://uftp-multicast.sourceforge.net/) / [mrsync](https://sourceforge.net/projects/mrsync/)
 
   ```
-  $ udp-sender --full-duplex -f source.vhd
-  $ udp-receiver -f saved.vhd
+  $ udp-sender --full-duplex -f source.vhdx
+  $ udp-receiver -f saved.vhdx
   ```
   
   ```
@@ -230,8 +232,8 @@ font /unifont.hex.gz
   $ uftpd -D /mnt/sda2/ -T /mnt/sda2/t/     # Dest, Temp (Client)
   $ uftp -R -1 /srv/pcroom/pieces/          # Source directory (Server)
   
-  $ split -b 1G /src/pcroom/disk.vhd /src/pcroom/pieces  # Split, unknown file size limit (2147483647)
-  $ cat * > disk.vhd                                     # Join
+  $ split -b 1G /src/pcroom/disk.vhdx /src/pcroom/pieces  # Split, unknown file size limit (2147483647)
+  $ cat * > disk.vhdx                                     # Join
   ```
   * [How can I get gcc to write a file larger than 2.0 GB?](https://askubuntu.com/questions/21474/how-can-i-get-gcc-to-write-a-file-larger-than-2-0-gb)
   
@@ -281,8 +283,8 @@ font /unifont.hex.gz
 - [Visual BCD Editor](https://www.boyans.net/)
   * [編輯 BCD 紀錄，使用 VHD 開機](https://www.boyans.net/VBCD_HowTo.html)
   ```
-  ApplicationDevice => LocateExDevice = \disk.vhd
-  OSDevice => LocateExDevice = \disk.vhd
+  ApplicationDevice => LocateExDevice = \pcroom.vhdx
+  OSDevice => LocateExDevice = \pcroom.vhdx
   ```
   * [Mounting the BCD Store as a Registry Hive](http://www.mistyprojects.co.uk/documents/BCDEdit/files/bcd_as_registry_hive.htm)
   * [Devices - Locate](http://www.mistyprojects.co.uk/documents/BCDEdit/files/device_locate.htm)
