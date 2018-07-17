@@ -31,9 +31,9 @@ Windows Native VHD Boot and Dispatch
 ## Disk layouts
 |檔案名稱|用途|類型|狀態|大小|
 |---|---|---|---|---|
-|disk_p.vhd|母碟|基礎磁碟|靜態|約 30 GB|
-|disk.vhd|子碟|差異化磁碟|動態|隨差異增加|
-|disk_r.vhd|還原檔|差異化磁碟|靜態|約 173 KB|
+|pcroom_base.vhdx|母碟|基礎磁碟|靜態|約 30 GB|
+|pcroom.vhdx|子碟|差異化磁碟|動態|隨差異增加|
+|pcroom_r.vhdx|還原檔|差異化磁碟|靜態|約 173 KB|
 
 ## 開機選項
 ```
