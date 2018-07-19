@@ -352,41 +352,41 @@ font /unifont.hex.gz
   +---------------------+
   ```
 - EFI partition (/boot/efi)
-```
-.
-├── EFI
-│   ├── BOOT
-│   │   ├── BOOTX64.EFI
-│   │   ├── fallback.efi
-│   │   └── fbx64.efi
-│   ├── fedora
-│   │   ├── BOOT.CSV
-│   │   ├── BOOTX64.CSV
-│   │   ├── grub.cfg
-│   │   ├── grubx64.efi
-│   │   ├── shim.efi
-│   │   ├── shimx64.efi
-│   │   ├── shimx64-fedora.efi
-│   │   └── x86_64-efi
-│   ├── Insyde
-│   └── Microsoft
-│       ├── Boot
-│       │   ├── BCD
-│       │   ├── BCD.pcroom_vhdx_efi
-│       │   ├── BCD.win10_vhd_efi
-│       │   ├── bootmgfw.efi
-│       │   └── bootmgr.efi
-│       ├── Boot_pcroom_vhdx
-│       │   ├── BCD
-│       │   ├── bootmgfw.efi
-│       │   └── bootmgr.efi
-│       ├── Boot_win10_vhd
-│       │   ├── BCD
-│       │   ├── bootmgfw.efi
-│       │   └── bootmgr.efi
-│       └── Recovery
-│           └── BCD
-└── sig_swift
-```
+  ```
+  .
+  ├── EFI
+  │   ├── BOOT
+  │   │   ├── BOOTX64.EFI
+  │   │   ├── fallback.efi
+  │   │   └── fbx64.efi
+  │   ├── fedora
+  │   │   ├── BOOT.CSV
+  │   │   ├── BOOTX64.CSV
+  │   │   ├── grub.cfg
+  │   │   ├── grubx64.efi
+  │   │   ├── shim.efi
+  │   │   ├── shimx64.efi
+  │   │   ├── shimx64-fedora.efi
+  │   │   └── x86_64-efi
+  │   ├── Insyde
+  │   └── Microsoft
+  │       ├── Boot
+  │       │   ├── BCD
+  │       │   ├── BCD.pcroom_vhdx_efi
+  │       │   ├── BCD.win10_vhd_efi
+  │       │   ├── bootmgfw.efi
+  │       │   └── bootmgr.efi
+  │       ├── Boot_pcroom_vhdx
+  │       │   ├── BCD
+  │       │   ├── bootmgfw.efi
+  │       │   └── bootmgr.efi
+  │       ├── Boot_win10_vhd
+  │       │   ├── BCD
+  │       │   ├── bootmgfw.efi
+  │       │   └── bootmgr.efi
+  │       └── Recovery
+  │           └── BCD
+  └── sig_swift
+  ```
 ## About
 HSIEH, Li-Yi @進學國小資訊組
