@@ -300,6 +300,40 @@ font /unifont.hex.gz
 - [PC: Illustrated Guide to GRUB and Linux Boot Process on BIOS and UEFI](http://iam.tj/prototype/guides/boot/)
 - [The rEFInd Boot Manager](http://www.rodsbooks.com/refind/)
 - [MBR2GPT.EXE](https://docs.microsoft.com/zh-tw/windows/deployment/mbr-to-gpt)
-
+- GPT + UEFI
+  ```
+   GPT
+  +-----------------------+
+  | EFI partition / FAT32 | boot manager: bootmgfw.efi, grubx64.efi 
+  +-----------------------+
+  | Ext4 partition        | kernel, rootfs: Fedora Linux (/boot, /, /home)
+  +-----------------------+
+  | NTFS partition        | kernel: Windows 10 (winload.efi)
+  +-----------------------+
+  | NTFS partition        | VHD, VHDX files (winload.efi)
+  +-----------------------+
+  ```
+- GPT + UEFI (VHDX)
+  ```
+   GPT
+  +----------------+
+  | EFI partition  | /EFI/Microsoft/Boot/bootmgfw.efi
+  | FAT32          |                   ./BCD.pcroom_vhdx_efi  (pcroom.vhdx)
+  |                |                   ./BCD.win10_vhd.efi    (win10.vhd)
+  |                |                   ./BCD                  (目前)
+  +----------------+
+  | NTFS partition | /pcroom.vhdx
+  |                | /win10.vhd
+  +----------------+
+  ```
+- MBR + BIOS (VHDX)
+  ```
+   MBR
+  +----------------+
+  | NTFS partition | /bootmgr
+  |                | /Boot/BCD.pcroom_vhdx
+  |                | /pcroom.vhdx
+  +----------------+
+  ```
 ## About
 HSIEH, Li-Yi @進學國小資訊組
