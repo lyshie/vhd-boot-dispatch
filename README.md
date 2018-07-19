@@ -367,7 +367,7 @@ font /unifont.hex.gz
   │   │   ├── shim.efi
   │   │   ├── shimx64.efi
   │   │   ├── shimx64-fedora.efi
-  │   │   └── x86_64-efi
+  │   │   └── x86_64-efi/
   │   ├── Insyde
   │   └── Microsoft
   │       ├── Boot
