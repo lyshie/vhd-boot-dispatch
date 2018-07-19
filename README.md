@@ -335,5 +335,21 @@ font /unifont.hex.gz
   |                | /pcroom.vhdx
   +----------------+
   ```
+- GPT + UEFI/BIOS coexist
+  ```
+   GPT
+  +---------------------+
+  | EFI partition       | bootmgfw.efi
+  | FAT32               | grubx64.efi
+  +---------------------+
+  | BIOS boot partition | core.img (Grub2)
+  +---------------------+
+  | Ext4                | /boot/grub2, /boot, vmlinuz, initramfs
+  +---------------------+
+  | Ext4 / LVM          | /, /home
+  +---------------------+
+  | NTFS partition      | bootmgr, grldr, pcroom.vhdx
+  +---------------------+
+  ```
 ## About
 HSIEH, Li-Yi @進學國小資訊組
