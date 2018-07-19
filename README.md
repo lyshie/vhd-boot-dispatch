@@ -299,6 +299,7 @@ font /unifont.hex.gz
 ## UEFI
 - [PC: Illustrated Guide to GRUB and Linux Boot Process on BIOS and UEFI](http://iam.tj/prototype/guides/boot/)
 - [The rEFInd Boot Manager](http://www.rodsbooks.com/refind/)
+- [MBR2GPT.EXE](https://docs.microsoft.com/zh-tw/windows/deployment/mbr-to-gpt)
 
 ## About
 HSIEH, Li-Yi @進學國小資訊組
