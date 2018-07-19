@@ -1,0 +1,36 @@
+#!/bin/sh
+exec tail -n +3 $0
+#menuentry 'Microsoft Windows 8.1' --class windows {
+#	savedefault
+#	insmod part_msdos
+#	insmod ntfs
+#	set root='hd0,msdos2'
+#	if [ x$feature_platform_search_hint = xy ]; then
+#	  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,msdos2 --hint-efi=hd0,msdos2 --hint-baremetal=ahci0,msdos2  64D29196D2916CD4
+#	else
+#	  search --no-floppy --fs-uuid --set=root 64D29196D2916CD4
+#	fi
+#	parttool ${root} hidden-
+#	drivemap -s (hd0) ${root}
+#	chainloader +1
+#}
+#
+menuentry 'Windows 10 UEFI (Intel SSD)' --class windows {
+	savedefault
+	insmod part_msdos
+	insmod part_gpt
+	insmod ntfs
+	background_color black
+	search --set=root --no-floppy --file /sig_swift
+	chainloader /EFI/Microsoft/Boot_pcroom_vhdx/bootmgfw.efi
+}
+
+menuentry 'Windows 10 UEFI (NTFS)' --class windows {
+	savedefault
+	insmod part_msdos
+	insmod part_gpt
+	insmod ntfs
+	background_color black
+	search --set=root --no-floppy --file /sig_swift
+	chainloader /EFI/Microsoft/Boot_win10_vhd/bootmgfw.efi
+}
