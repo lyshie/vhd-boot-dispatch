@@ -295,6 +295,7 @@ font /unifont.hex.gz
   $ ./PsExec -accepteula
   $ ./PsExec -i 1 -s notepad.exe
   ```
+- [AIO Boot](https://github.com/nguyentumine/AIO-Boot)
 
 ## UEFI
 - [PC: Illustrated Guide to GRUB and Linux Boot Process on BIOS and UEFI](http://iam.tj/prototype/guides/boot/)
