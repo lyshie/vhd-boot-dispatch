@@ -295,6 +295,10 @@ font /unifont.hex.gz
   ```
   $ ./PsExec -accepteula
   $ ./PsExec -i 1 -s notepad.exe
+
+  以 start 指令同步執行，類似 fork 功能
+  $ start /b C:\Users\student\Desktop\PSTools\PsExec.exe \\主機1 -u 帳號 -p 密碼 -i -f -c " 指令.cmd"
+  $ start /b C:\Users\student\Desktop\PSTools\PsExec.exe \\主機2 -u 帳號 -p 密碼 -i -f -c " 指令.cmd"
   ```
 - [AIO Boot](https://github.com/nguyentumine/AIO-Boot)
 
