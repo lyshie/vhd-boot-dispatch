@@ -225,6 +225,7 @@ font /unifont.hex.gz
   ```
   $ udp-sender --full-duplex -f source.vhdx
   $ udp-receiver -f saved.vhdx
+  $ rm /root/.ssh/known_hosts; sshpass -f passwd pssh -t 0 -i -A -h hosts_pcroom_30 -O "StrictHostKeyChecking no" -- "sudo /opt/bin/udp-receiver --nokbd -f /mnt/sda2/pcroom.vhdx \&"
   ```
   
   ```
