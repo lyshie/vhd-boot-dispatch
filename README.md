@@ -158,19 +158,27 @@ $ VBoxManage clonehd dynamicd_disk.vhd fixed_disk.vhd --format vhd --variant dyn
 
 ## PSSH
 ```
-$ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O "StrictHostKeyChecking no" -- "[指令]"
-$ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -H user@host_or_ip -O "StrictHostKeyChecking no" -- "[指令]"
+$ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -t 0 -O "StrictHostKeyChecking no" -- "[指令]"
+$ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -H user@host_or_ip -t 0 -O "StrictHostKeyChecking no" -- "[指令]"
 ```
 
 ```
-$ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O "StrictHostKeyChecking no" -- "sudo ntfs-3g /dev/sda2 /mnt/sda2"
-$ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O "StrictHostKeyChecking no" -- "tar xvfz /mnt/sda2/vhd.tgz -C /mnt/sda2"
-$ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O "StrictHostKeyChecking no" -- "sudo reboot"
+$ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -t 0 -O "StrictHostKeyChecking no" -- "sudo ntfs-3g /dev/sda2 /mnt/sda2"
+$ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -t 0 -O "StrictHostKeyChecking no" -- "tar xvfz /mnt/sda2/vhd.tgz -C /mnt/sda2"
+$ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -t 0 -O "StrictHostKeyChecking no" -- "sudo reboot"
 ```
 
 ```
-$ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O "StrictHostKeyChecking no" -- "shutdown -s -t 30"
-$ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -O "StrictHostKeyChecking no" -- "shutdown -r -t 30"
+$ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -t 0 -O "StrictHostKeyChecking no" -- "shutdown -s -t 30"
+$ rm /root/.ssh/known_hosts; sshpass -p [密碼] pssh -i -A -h [主機清單] -t 0 -O "StrictHostKeyChecking no" -- "shutdown -r -t 30"
+```
+
+```
+$ rm /root/.ssh/known_hosts; sshpass -f [密碼] pssh -i -A -h [主機清單] -t 0 -O "StrictHostKeyChecking no" -- "/opt/bin/udp-receiver --receive-timeout 10 --n okbd -f /mnt/sda2/pcroom.vhdx \&"
+```
+
+```
+$ /opt/bin/udp-sender -f /mnt/sda2/pcroom.vhdx
 ```
 
 ## grub4dos
