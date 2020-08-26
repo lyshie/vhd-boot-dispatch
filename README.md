@@ -86,7 +86,7 @@ diskpart
 ```
 diskpart
 > select vdisk file="f:\pcroom_base.vhdx"
-> merge depth=1
+> merge vdisk depth=1
 > compact vdisk
 > create vdisk file="f:\pcroom.vhdx" parent="f:\pcroom_base.vhdx"
 ```
