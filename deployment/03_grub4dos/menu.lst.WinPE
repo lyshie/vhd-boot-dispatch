@@ -1,0 +1,71 @@
+﻿clear
+color blue/green yellow/red white/magenta white/magenta
+## menu border color
+color border=0xEEFFEE
+## set vbe mode
+graphicsmode -1 640:800 480:600 24:32 || graphicsmode -1 -1 -1 24:32
+font /unifont.hex.gz
+
+timeout 5
+default 0
+hiddenmenu
+
+title  [00] Win10電腦教室(儲存)
+find --set-root --ignore-floppies /pcroom.vhdx
+dd if=()/Boot/BCD.pcroom_vhdx of=()/Boot/BCD
+chainloader /bootmgr
+makeactive
+
+title  [01] Win10電腦教室(還原)
+password 00000000
+find --set-root --ignore-floppies /pcroom.vhdx
+dd if=()/Boot/BCD.pcroom_vhdx of=()/Boot/BCD
+dd if=()/pcroom_r.vhdx of=()/pcroom.vhdx
+chainloader /bootmgr
+makeactive
+
+title  [02] Win10測試(儲存)
+find --set-root --ignore-floppies /test.vhdx
+dd if=()/Boot/BCD.test_vhdx of=()/Boot/BCD
+chainloader /bootmgr
+makeactive
+
+title  [03] Win10測試(還原)
+password 00000000
+find --set-root --ignore-floppies /test.vhdx
+dd if=()/Boot/BCD.test_vhdx of=()/Boot/BCD
+dd if=()/test_r.vhdx of=()/test.vhdx
+chainloader /bootmgr
+makeactive
+
+title  [04] Win7本機
+root (hd0,0)
+hide (hd0,2)
+chainloader +1
+makeactive
+
+title  [05] 還原Win7\n Restore Win7 from OS
+password leosys
+root (hd0,2)
+kernel /live/vmlinuz boot=live config live-media-path=/live noswap edd=on nolocales nomodeset noprompt  ocs_live_run="ocs-live-restore" ocs_live_extra_param="-r -k -t -p reboot  restoreparts  OS  sda1 " ocs_live_keymap="NONE" ocs_live_batch="yes" ocs_lang="" vga=788 ip=frommedia  nosplash
+initrd /live/initrd.img
+
+title  [06] 備份Win7\n Backup Win7 to OS
+password leosys
+root (hd0,2)
+kernel /live/vmlinuz boot=live config live-media-path=/live noswap edd=on nolocales  nomodeset  noprompt ocs_live_run="ocs-live-restore" ocs_live_extra_param="-q -c -rm-win-swap-hib -z1p -i 2000 -sc -p reboot saveparts OS  sda1" ocs_live_keymap="NONE" ocs_live_batch="yes" ocs_lang=""  vga=788 ip=frommedia nosplash
+initrd /live/initrd.img
+
+title  [07] 重新啟動\n Reboot
+reboot
+
+title  [08] 關機\n Halt
+halt
+
+title  [09] Windows PE
+password 00000000
+find --set-root /winpe_amd64.iso
+map /winpe_amd64.iso (0xff) || map --mem /winpe_amd64.iso (0xff)
+map --hook
+root (0xff)
+chainloader (0xff)

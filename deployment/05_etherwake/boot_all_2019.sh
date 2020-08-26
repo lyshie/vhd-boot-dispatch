@@ -121,8 +121,8 @@ etherwake -i enp2s0f0 -b 94:C6:91:F7:32:85
 sleep 1
 
 #### PC_31
-etherwake -i enp2s0f0 -b 94:C6:91:F7:3E:A3
-sleep 1
+#etherwake -i enp2s0f0 -b 94:C6:91:F7:3E:A3
+#sleep 1
 
 #### PC_32
 #etherwake -i enp2s0f0 -b 94:C6:91:97:08:BB
