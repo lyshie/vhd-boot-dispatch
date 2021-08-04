@@ -197,6 +197,15 @@ font /unifont.hex.gz
 ```
 
 ## External Reference
+- [Disable driver signature enforcement [Windows Guide]](https://windowsreport.com/driver-signature-enforcement-windows-10/)
+
+  ```
+  $ bcdedit.exe -set loadoptions DISABLE_INTEGRITY_CHECKS
+  $ bcdedit.exe -set TESTSIGNING ON
+  
+  $ gpedit.msc
+  User Configuration > Administrative Templates > System > Driver Installation > Code signing for device drivers entry [Ignore]
+  ```
 - [Grub4dos Guide](http://diddy.boot-land.net/grub4dos/Grub4dos.htm)
 - [Tiny Core Linux](http://distro.ibiblio.org/tinycorelinux/)
   * ntfs-3g
