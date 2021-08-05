@@ -318,6 +318,29 @@ font /unifont.hex.gz
   $ start /b C:\Users\student\Desktop\PSTools\PsExec.exe \\主機2 -u 帳號 -p 密碼 -i -f -c " 指令.cmd"
   ```
 - [AIO Boot](https://github.com/nguyentumine/AIO-Boot)
+- [Batch file or tool like powertoy to change the resolution or scale of windows with the press of 1 button?](https://docs.microsoft.com/en-us/answers/questions/197944/batch-file-or-tool-like-powertoy-to-change-the-res.html)
+
+  ```
+  # $scaling = 0 : 100% (default)
+  # $scaling = 1 : 125% 
+  # $scaling = 2 : 150% 
+  # $scaling = 3 : 175% 
+  param($scaling = 0)
+  $source = @'
+  [DllImport("user32.dll", EntryPoint = "SystemParametersInfo")]
+  public static extern bool SystemParametersInfo(
+                       uint uiAction,
+                       uint uiParam,
+                       uint pvParam,
+                       uint fWinIni);
+  '@
+  $apicall = Add-Type -MemberDefinition $source -Name WinAPICall -Namespace SystemParamInfo -PassThru
+  $apicall::SystemParametersInfo(0x009F, $scaling, $null, 1) | Out-Null
+  ```
+
+  ```
+  $ powershell -ExecutionPolicy Bypass -File "z:\scale.ps1" 1
+  ```
 
 ## UEFI
 - [PC: Illustrated Guide to GRUB and Linux Boot Process on BIOS and UEFI](http://iam.tj/prototype/guides/boot/)
