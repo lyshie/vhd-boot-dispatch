@@ -235,8 +235,12 @@ font /unifont.hex.gz
 - [Tiny Core Linux Customizations for Remastering](http://www.canbike.org/off-topic/aggregate/tiny-core-linux-customizations-for-remastering.html)
 
   ```
-  $ zcat core.gz | sudo cpio -i -H newc -d
-  $ sudo find | sudo cpio -o -H newc | gzip -2 > core.gz
+  $ mkdir temp
+  $ cp tce.gz temp/
+  $ cd temp/
+  $ zcat tce.gz | sudo cpio -i -H newc -d
+  $ rm tce.gz
+  $ sudo find | sudo cpio -o -H newc | gzip -2 > ../tce.gz
   ```
 - [Transmission](https://transmissionbt.com/)
 
