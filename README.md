@@ -64,6 +64,13 @@ base.vhdx(0) => test.vhdx(1)   == pcroom_base.vhdx(1) => pcroom.vhdx(2)
 ```
 
 ## 如何準備 VHD 檔案
+- Windows 11 bypass
+```
+HKLM -> SYSTEM -> Setup -> LabConfig ->
+    BypassTPMCheck        (DWORD => 1)
+    BypassRAMCheck        (DWORD => 1)
+    BypassSecureBootCheck (DWORD => 1)
+```
 - 透過 VirtualBox 安裝新系統
 - [取消 `VirtualDiskExpandOnMount`](https://superuser.com/questions/1149941/how-to-by-pass-vhd-boot-host-volume-not-enough-space-when-native-booting)
   ```
