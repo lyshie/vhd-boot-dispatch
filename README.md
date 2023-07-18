@@ -16,6 +16,14 @@ Windows Native VHD Boot and Dispatch
 - 於 Windows 中安裝 MSYS2，以 cygrunsrv 方式啟動 sshd server
 - Windows 開機後自動依 IP 設定電腦名稱
 
+## UEFI 開機支援 (使用 CorePure64)
+```
+ +-----------+    +------+    +---------------+    +----------+    +---------------+    +----------------+    +---------------+
+ | dhcp      |    | tftp |    |  bootx64.efi  |    | grub.cfg |    | vmlinuz64     |    | tce.gz         |    | deploy.sh     | 
+ | (RFC4578) |    |      |    | (grubx64.efi) |    |          |    | corepure64.gz |    | (bootlocal.sh) |    | (next-server) |
+ +-----------+    +------+    +---------------+    +----------+    +---------------+    +----------------+    +---------------+
+```
+
 ## [Transfer time](https://techinternets.com/copy_calc)
 - 40 GiB
 
