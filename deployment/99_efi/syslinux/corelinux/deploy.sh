@@ -25,6 +25,7 @@ ntfs-3g -o noatime,async,big_writes /dev/sda2 /mnt/sda2
 
 # D700
 mount /dev/nvme0n1p1 /mnt/nvme0n1p1
+ntfsfix /dev/nvme0n1p3
 ntfs-3g -o noatime,async,big_writes,remove_hiberfile /dev/nvme0n1p3 /mnt/nvme0n1p3
 
 # p2p & transmission-cli
