@@ -8,6 +8,8 @@
 #    su tc -c "tce-load -i /cde/optional/${z}"
 #done                    
 
+ln -s /lib /lib64
+
 su tc -c "tce-load -wi util-linux"
 su tc -c "tce-load -wi parted"
 #su tc -c "tce-load -wi grub4dos"
@@ -20,6 +22,10 @@ ntfs-3g -o noatime,async,big_writes /dev/sda1 /mnt/sda1
 ## drive D:\
 mkdir /mnt/sda2
 ntfs-3g -o noatime,async,big_writes /dev/sda2 /mnt/sda2
+
+# D700
+mount /dev/nvme0n1p1 /mnt/nvme0n1p1
+ntfs-3g -o noatime,async,big_writes,remove_hiberfile /dev/nvme0n1p3 /mnt/nvme0n1p3
 
 # p2p & transmission-cli
 mkdir /mnt/sda2/p2p
