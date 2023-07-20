@@ -69,7 +69,7 @@ etherwake -i enp2s0f0 -b C8:7F:54:EB:15:87
 sleep 1
 
 #### PC_58
-etherwake -i enp2s0f0 -b C8:7F:54:EB:15:B7
+etherwake -i enp2s0f0 -b C8:7F:54:EB:55:05
 sleep 1
 
 #### PC_59
