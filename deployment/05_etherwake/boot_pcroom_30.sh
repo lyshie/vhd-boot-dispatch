@@ -129,5 +129,5 @@ sleep 1
 #sleep 1
 
 #### PC_33
-#etherwake -i enp2s0f0 -b C0:3F:D5:FF:09:A1
+#etherwake -i enp2s0f0 -b 94:C6:91:F7:33:1F
 #sleep 1

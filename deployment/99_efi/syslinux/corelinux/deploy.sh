@@ -28,6 +28,14 @@ mount /dev/nvme0n1p1 /mnt/nvme0n1p1
 ntfsfix /dev/nvme0n1p3
 ntfs-3g -o noatime,async,big_writes,remove_hiberfile /dev/nvme0n1p3 /mnt/nvme0n1p3
 
+# 還原 D700
+restore=$(cat /proc/cmdline | egrep -o "restore=\S+" | awk -F= '{print $2}')
+if [[ "$restore" == "true" ]]; then
+    cp -f "/mnt/nvme0n1p3/pcroom_r.vhdx" "/mnt/nvme0n1p3/pcroom.vhdx"
+    sync
+    reboot
+fi
+
 # p2p & transmission-cli
 mkdir /mnt/sda2/p2p
 sysctl -w net.core.rmem_max=4194304
