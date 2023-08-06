@@ -23,6 +23,7 @@ Windows Native VHD Boot and Dispatch
  | (RFC4578) |    |      |    | (grubx64.efi) |    |          |    | corepure64.gz |    | (bootlocal.sh) |    | (next-server) |
  +-----------+    +------+    +---------------+    +----------+    +---------------+    +----------------+    +---------------+
 ```
+![diagrams/booting.png](開機流程圖)
 
 ## [Transfer time](https://techinternets.com/copy_calc)
 - 40 GiB
