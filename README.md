@@ -19,7 +19,7 @@ Windows Native VHD Boot and Dispatch
 ## UEFI 開機支援 (使用 CorePure64)
 ```
  +-----------+    +------+    +---------------+    +----------+    +---------------+    +----------------+    +---------------+
- | dhcp      |    | tftp |    |  bootx64.efi  |    | grub.cfg |    | vmlinuz64     |    | tce.gz         |    | deploy.sh     | 
+ | dhcp      |    | tftp |    |  bootx64.efi  |    | grub.cfg |    | vmlinuz64     |    | tce64.gz       |    | deploy.sh     | 
  | (RFC4578) |    |      |    | (grubx64.efi) |    |          |    | corepure64.gz |    | (bootlocal.sh) |    | (next-server) |
  +-----------+    +------+    +---------------+    +----------+    +---------------+    +----------------+    +---------------+
 ```
