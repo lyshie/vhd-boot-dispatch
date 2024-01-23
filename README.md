@@ -212,6 +212,28 @@ graphicsmode -1 640:800 480:600 24:32 || graphicsmode -1 -1 -1 24:32
 font /unifont.hex.gz
 ```
 
+## Disk layout for Windows 11
+```
+## fdisk
+$ sudo fdisk /dev/sda
+  g (GPT) --> n (new partition) --> /dev/sda1 (EFI partition)
+          --> n (new partition) --> /dev/sda2 (Microsoft Basic Data / NTFS)
+
+## foramt disk
+$ sudo partprobe /dev/sda
+$ sudo mkfs.vfat -v /dev/sda1
+$ sudo mkfs.ntfs -Q /dev/sda2
+
+## mount
+$ sudo mount /dev/sda1 /mnt/sda1
+$ sudo ntfs-3g /dev/sda2 /mnt/sda2
+
+## copy bootup files
+$ cd /mnt/sda1 ; sudo scp -r [REMOTE]:/mnt/efi/EFI .
+$ cd /mnt/sda2 ; sudo scp -r [REMOTE]:/mnt/ntfs/Boot .
+$ /mnt/sda2/{bootmgr, BOOTNXT, grldr, menu.lst, winpe_amd64.iso, unifont.hex.gz, DO_NOT_SAVE_FILES_IN_THIS_DRIVE}
+```
+
 ## 設定隱藏檔案
 - [ntfs-3g - Using Extended Attributes](https://github.com/tuxera/ntfs-3g/wiki/Using-Extended-Attributes#ntfs-attributes)
 ```
