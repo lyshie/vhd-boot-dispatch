@@ -212,6 +212,13 @@ graphicsmode -1 640:800 480:600 24:32 || graphicsmode -1 -1 -1 24:32
 font /unifont.hex.gz
 ```
 
+## 設定隱藏檔案
+[ntfs-3g - Using Extended Attributes](https://github.com/tuxera/ntfs-3g/wiki/Using-Extended-Attributes#ntfs-attributes)
+```
+## FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_ARCHIVE
+$ setfattr -h -v 0x00000022 -n system.ntfs_attrib_be *.vhdx
+```
+
 ## External Reference
 - [Disable driver signature enforcement [Windows Guide]](https://windowsreport.com/driver-signature-enforcement-windows-10/)
 
