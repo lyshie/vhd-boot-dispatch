@@ -241,6 +241,15 @@ $ /mnt/sda2/{bootmgr, BOOTNXT, grldr, menu.lst, winpe_amd64.iso, unifont.hex.gz,
 $ setfattr -h -v 0x00000022 -n system.ntfs_attrib_be *.vhdx
 ```
 
+## import / export Veyon Network object directory
+```
+$ veyon-cli networkobjects export c:\1.csv location PCROOM-1 format "%name%,%host%,%mac"
+$ veyon-cli networkobjects export c:\2.csv location PCROOM-2 format "%name%,%host%,%mac"
+
+$ veyon-cli networkobjects import c:\1.csv location PCROOM-1 format "%name%,%host%,%mac"
+$ veyon-cli networkobjects import c:\2.csv location PCROOM-2 format "%name%,%host%,%mac"
+```
+
 ## External Reference
 - [Disable driver signature enforcement [Windows Guide]](https://windowsreport.com/driver-signature-enforcement-windows-10/)
 
