@@ -250,6 +250,17 @@ $ veyon-cli networkobjects import c:\1.csv location PCROOM-1 format "%name%,%hos
 $ veyon-cli networkobjects import c:\2.csv location PCROOM-2 format "%name%,%host%,%mac"
 ```
 
+## Multiple file transfer (udpcast)
+- [Multiple file transfer](https://udpcast.linux.lu/mailman3/hyperkitty/list/udpcast@udpcast.linux.lu/thread/LFHUP5FKX2FTF2ENBYHPWSG2SQ3TYNUL/)
+```
+## sender
+$ tar -cf - /path/to/sourcefolder | udp-sender
+
+## receiver
+$ udp-receiver --nokbd | tar -C /path/to/destfolder -xf -
+
+```
+
 ## External Reference
 - [Disable driver signature enforcement [Windows Guide]](https://windowsreport.com/driver-signature-enforcement-windows-10/)
 
