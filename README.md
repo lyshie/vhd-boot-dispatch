@@ -213,7 +213,7 @@ font /unifont.hex.gz
 ```
 
 ## 設定隱藏檔案
-[ntfs-3g - Using Extended Attributes](https://github.com/tuxera/ntfs-3g/wiki/Using-Extended-Attributes#ntfs-attributes)
+- [ntfs-3g - Using Extended Attributes](https://github.com/tuxera/ntfs-3g/wiki/Using-Extended-Attributes#ntfs-attributes)
 ```
 ## FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_ARCHIVE
 $ setfattr -h -v 0x00000022 -n system.ntfs_attrib_be *.vhdx
