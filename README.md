@@ -261,6 +261,16 @@ $ udp-receiver --nokbd | tar -C /path/to/destfolder -xf -
 
 ```
 
+## 網路分享
+```
+## RpcOverNamedPipesAndTcp.cmd
+$ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Printers\RPC" /v RpcProtocols /t REG_DWORD /d 0x7 /f
+
+## RpcOverNamedPipes.cmd
+$ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Printers\RPC" /v RpcUseNamedPipeProtocol /t REG_DWORD /d 1 /f
+```
+
+
 ## External Reference
 - [Disable driver signature enforcement [Windows Guide]](https://windowsreport.com/driver-signature-enforcement-windows-10/)
 
